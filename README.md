@@ -1,26 +1,21 @@
-# Image-Transformation
+## EXP NO:05
+## DATE:
+## Image-Transformation
 ## Aim
 To perform image transformation such as Translation, Scaling, Shearing, Reflection, Rotation and Cropping using OpenCV and Python.
-
 ## Software Required:
 Anaconda - Python 3.7
-
 ## Algorithm:
 ### Step1:
-
 Import the necessary libraries and read the original image and save it a image variable.
 ### Step2:
-
 Translate the image using Translation_matrix=np.float32([[1,0,120],[0,1,120],[0,0,1]]) Translated_image=cv2.warpPerspective(org_img,Translation_matrix,(col,row))
 ### Step3:
 Scale the image using 
 Scaling_Matrix=np.float32([[1.2,0,0],[0,1.2,0],[0,0,1]]) Scaled_image=cv2.warpPerspective(org_img,Scaling_Matrix,(col,row))
-
 ### Step4:
 Shear the image using 
-
 Shearing_matrix=np.float32([[1,0.2,0],[0.2,1,0],[0,0,1]]) Sheared_image=cv2.warpPerspective(org_img,Shearing_matrix,(col2,int(row1.5)))
-
 ### Step5:
 Reflection of image can be achieved through the code Reflection_matrix_row=np.float32([[1,0,0],[0,-1,row],[0,0,1]]) Reflected_image_row=cv2.warpPerspective(org_img,Reflection_matrix_row,(col,int(row)))
 ### Step6:
@@ -33,9 +28,6 @@ Display all the Transformed images.
 ```python
 Developed By: Sri Harish M
 Register Number:212220230047 
-
-
-
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
@@ -44,13 +36,9 @@ img= cv2.cvtColor (img, cv2.COLOR_BGR2RGB)
 plt.axis('off')
 plt.imshow(img)
 plt.show()
-
 i)Image Translation
-
-
 shape=img.shape
 rows, cols, dim = shape
-
 M=np.float32([[1,0,80],
           [0,1,75],
           [0,0,1]])
@@ -58,25 +46,16 @@ translated_img=cv2.warpPerspective(img,M,(cols,rows))
 plt.axis('off')
 plt.imshow(translated_img)
 plt.show()
-
 ii) Image Scaling
-
 rows, cols, dim = shape
 M = np.float32 ([[1.5, 0, 0],
 [0, 1.8, 0],
 [0, 0, 1]])
-
 scaled_img = cv2.warpPerspective (img, M, (cols*2, rows*2))
 plt.axis ('off')
-
 plt.imshow (scaled_img)
 plt.show()
-
-
-
 iii)Image Shearing
-
-
 Mx=np.float32([[1,0.5,0],
           [0,1,75],
           [0,0,1]])
@@ -86,16 +65,12 @@ My=np.float32([[1,0,0],
 shx_img=cv2.warpPerspective(img,Mx,(int(cols),int(rows)))
 shy_img=cv2.warpPerspective(img,My,(int(cols),int(rows)))
 plt.axis ('off')
-
 plt.imshow (shx_img)
 plt.show()
 plt.axis ('off')
 plt.imshow (shy_img)
 plt.show()
-
-
 iv)Image Reflection
-
 Mx=np.float32([[1,0,0],
           [0,-1,rows],
           [0,0,1]])
@@ -111,66 +86,34 @@ plt.show()
 plt.axis ('off')
 plt.imshow (refy_img)
 plt.show()
-
-
 v)Image Rotation
-
 angle=np.radians(27)
 Rotation_matrix=np.float32([[np.cos(angle),-np.sin(angle),0],
                                 [np.sin(angle),np.cos(angle),0],
                                 [0,0,1]])
 rotimg=cv2.warpPerspective(img,Rotation_matrix,(int(cols),int(rows)))
 plt.axis ('off')
-
 plt.imshow (rotimg)
 plt.show()
-
-
-
 vi)Image Cropping
-
 cropimg=img[60:400,60:400]
 plt.axis ('off')
-
 plt.imshow (cropimg)
 plt.show()
-
-
-
-
 ```
 ## Output:
 ### i)Image Translation
-
 ![r1](https://user-images.githubusercontent.com/75241366/166687385-2906d87a-3b24-49a4-9489-f2ded7be614d.jpg)
-
-
 ### ii) Image Scaling
 ![p2](https://user-images.githubusercontent.com/75241366/166687400-cb2e7bc6-121c-419f-825d-eeeb0152c17a.jpg)
-
-
-
 ### iii)Image shearing
 ![p3](https://user-images.githubusercontent.com/75241366/166687411-2293684f-0cef-41e5-95f9-681a53cb6e49.jpg)
-
-
 ### iv)Image Reflection
 ![p4](https://user-images.githubusercontent.com/75241366/166687418-ce458ed9-1590-40b0-9311-ee82104b0eb3.jpg)
-
-
-
-
 ### v)Image Rotation
 ![r5](https://user-images.githubusercontent.com/75241366/166687428-d7b28c14-a56d-41f1-952a-591dabc93c03.jpg)
-
-
-
-
 ### vi)Image Cropping
 ![r6](https://user-images.githubusercontent.com/75241366/166687435-372a43d7-a577-431e-93d0-1aef940a7bed.jpg)
-
-
-
 
 ## Result: 
 
